@@ -121,9 +121,9 @@ export interface NexusGenFieldTypes {
   User: { // field return type
     email: string; // String!
     id: number; // Int!
-    links: NexusGenRootTypes['Link'][]; // [Link!]!
+    links: Array<NexusGenRootTypes['Link'] | null> | null; // [Link]
     name: string; // String!
-    votes: NexusGenRootTypes['Link'][]; // [Link!]!
+    votes: Array<NexusGenRootTypes['Link'] | null> | null; // [Link]
   }
   Vote: { // field return type
     link: NexusGenRootTypes['Link']; // Link!
