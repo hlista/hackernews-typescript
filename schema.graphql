@@ -24,7 +24,7 @@ type Link {
   id: Int!
   postedBy: User
   url: String!
-  voters: [User!]!
+  voters: [User]
 }
 
 input LinkOrderByInput {

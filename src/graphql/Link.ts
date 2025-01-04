@@ -17,12 +17,12 @@ export const Link = objectType({
               }).postedBy();
           }
         });
-        t.nonNull.list.nonNull.field("voters", {
+        t.list.field("voters", {
           type: "User",
           resolve(parent, args, context) {
-            return context.prisma.link
-              .findUnique({ where: {id: parent.id}})
-              .voters();
+            const { id } = parent;
+            const voters = context.prisma.link.findUnique({ where: {id: id}}).voters();
+            return voters;
           }
         });
     },

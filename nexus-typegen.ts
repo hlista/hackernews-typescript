@@ -104,7 +104,7 @@ export interface NexusGenFieldTypes {
     id: number; // Int!
     postedBy: NexusGenRootTypes['User'] | null; // User
     url: string; // String!
-    voters: NexusGenRootTypes['User'][]; // [User!]!
+    voters: Array<NexusGenRootTypes['User'] | null> | null; // [User]
   }
   Mutation: { // field return type
     deleteLink: NexusGenRootTypes['Link']; // Link!
